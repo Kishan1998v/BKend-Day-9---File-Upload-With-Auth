@@ -7,12 +7,14 @@ const createDB = new Sequelize('test-db', 'user', 'pass', {
 
 //Connecting Database
 const connectDB = () => {
-    createDB.sync().then(() => {
-        console.log('connected to db');
-    })
-    .catch(e=> {
-        console.log('db connection failed :', e);
-    })
+    createDB
+        .sync()
+        .then(() => {
+            console.log('connected to db');
+        })
+        .catch((e)=> {
+            console.log('db connection failed :', e);
+        })
 }
 
 module.exports = { createDB ,connectDB };
